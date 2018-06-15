@@ -4,7 +4,7 @@ from rest_framework import routers
 from tracker.views import WeightViewSet
 
 router = routers.DefaultRouter()
-router.register('', WeightViewSet)
+router.register('tracker', WeightViewSet)
 
 urlpatterns = [
     path('', include(router.urls))
