@@ -1,10 +1,11 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from tracker.views import WeightViewSet
+from tracker.views import WeightViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register('tracker', WeightViewSet)
+router.register('users', UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls))
