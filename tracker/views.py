@@ -5,6 +5,7 @@ from  tracker.models import WeightModel
 from django.contrib.auth.models import User
 from tracker.serializers import WeightSerializer
 from tracker.serializers import UserSerializer
+from tracker.permissions import IsOwner
 
 # Create your views here.
 
@@ -12,7 +13,8 @@ from tracker.serializers import UserSerializer
 class WeightViewSet(viewsets.ModelViewSet):
     queryset = WeightModel.objects.all()
     serializer_class = WeightSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwner)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
