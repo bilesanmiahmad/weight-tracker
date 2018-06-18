@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import permissions
 from  tracker.models import WeightModel
-from django.contrib.auth.models import User
+from accounts.models import User
 from tracker.serializers import WeightSerializer
 from tracker.serializers import UserSerializer
 from tracker.permissions import IsOwner

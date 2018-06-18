@@ -8,6 +8,7 @@ name = "pypi"
 [packages]
 django = "*"
 django-rest-framework = "*"
+pillow = "*"
 
 [requires]
 python_version = "2.7"
